@@ -38,31 +38,32 @@
     -->
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
 
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
     <title>Hello World</title>
     
     <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
     
  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     
     <script type="text/javascript">
-     app.initialize();
-        
-     $( document ).ready(function() {
-     
-       $.mobile.loadPage( "http://ski-schule.jelastic.regruhosting.ru");
       
-     });
+    document.addEventListener("deviceready", onDeviceReady, false); 
+
+    function onDeviceReady() {
+     var myurl = "http://ski-schule.jelastic.regruhosting.ru/";
+     
+     // Now safe to use the Codova API
+     window.location=myurl; 
+    }
+
   
     </script>
     
 </head>
 
 <body>
-  
+    <div id="target"></div>
 </body>
 
 </html>
